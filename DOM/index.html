@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagina</title>
+</head>
+<body>
+    <p class="demo">nnnnnn ipsum dolor sit amet.</p>
+    <p class="demos">Lorem hhhhhh dolor sit amet.</p>
+    <p id="demo1">Lorem ipsum dolor sit amet.</p>
+    <p class="demo">Lorem ipsum dolor sit amet.</p>
+    <p id="demo2">Lorem ipsum dolor sit amet.</p>
+    <p class="demo">Lorem ipsum dolor sit amet.</p>
+    <p class="demo">Lorem ipsum dolor sit amet.</p>
+    <p class="demo">Lorem ipsum dolor sit amet.</p>
+    <script>
+        var x=document.querySelector("p.demos");
+        x.style.backgroundColor="red";
+        document.querySelector("#demo1").innerHTML="Jaime";
+        document.querySelector("#demo2").style.backgroundColor="yellow";
+        console.log(x);
+        var y=document.querySelectorAll(".demo");
+        var i;
+        for(i=0;i<y.length;i++){
+            y[i].style.backgroundColor="green";
+        }
+        var p=document.getElementById("demo1");
+        //document.renameNode(p, null, "h1");
+        document.title="Jaime";
+        console.log(document.URL);
+        document.writeln("Nuevo");
+        
+
+        
+    </script>
+
+</body>
+<script>
+    
+//1 addEventListener
+// document.addEventListener("click", function() {
+//     document.getElementById("demo").innerHTML="Hola Jaime";
+//     document.body.style.backgroundColor = "red";
+// });
+
+//2 baseURI
+// <button onclick="verURI()">Ver baseURI</button>
+// <p><strong>Nota:</strong> The baseURI ruta del documento.</p>
+// <p id="demo"></p>
+// <script>
+// function verURI() {
+//     var x = document.baseURI;
+//     document.getElementById("demo").innerHTML = x;
+// }
+// </scrip>
+//3a body
+//     <h1>Titulo</h1>
+//     <p>Lorem, ipsum dolor.</p>
+//     <button onclick="mifuncion()">Click</button>
+//     <p id="demo"></p>
+//     <script>
+//         function mifuncion() {
+//         var x=document.body.innerHTML;
+//         document.getElementById("demo").innerHTML=x;
+            
+//         }
+//     </scrip>
+//3b body
+// <p>crear un tag p</p> 
+// <button onclick="mifuncion()">Crear</button>   
+// <script>
+// function mifuncion() {
+//     var x=document.createElement("p");
+//     var t=document.createTextNode("Texto de pararfo");
+//     x.appendChild(t);
+//     document.body.appendChild(x);
+// }
+// </scrip>
+
+//4
+// <p>Click the button to open an output stream in a new window, add some text, then close the output stream.</p>
+// <button onclick="myFunction()">Try it</button>
+// <script>
+// function myFunction() {
+//   var w = window.open();
+//   w.document.open();
+//   w.document.write("<h1>Hello World!</h1>");
+//   w.document.close();
+// }
+// </scrip>
+
+//5
+// <p>Cambiar</p>
+
+// <ul>
+//     <li>Cafe</li>
+//     <li>Te</li>
+// </ul>
+// <button onclick="mifuncion()">Cambiar</button>
+// <script>
+// function mifuncion() {
+//     var d=document.createDocumentFragment();
+//     d.appendChild(document.getElementsByTagName("LI")[0]);
+//     d.childNodes[0].childNodes[0].nodeValue="Leche";
+//     document.getElementsByTagName("UL")[0].appendChild(d);
+// }
+
+// </scrip>
+
+//6
+    // <h1>titutlo </h1>
+    // <div id="caja"></div>
+    // <script>
+    //     //Agregar un boton a un div
+    //     var btn=document.createElement("BUTTON");
+    //     btn.innerHTML="Ver";
+    //     document.getElementById("caja").appendChild(btn);
+    //     // Agregar un h1 a body
+    //     var h=document.createElement("H1");
+    //     var t=document.createTextNode("Hola Jaime");
+    //     h.appendChild(t);
+    //     document.body.appendChild(h);
+    // </scrip>
+
+//7
+    // <style>
+    // div{
+    //     padding: 50px;
+    //     background-color: tomato;
+    //     color: white;
+    // }
+    // </style>
+    // <script>
+    //     function mifuncion(event) {
+    //         console.log('si');
+            
+    //         var x=document.createEvent("MouseEvent");
+    //         x.initMouseEvent("mouseover", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    //         document.getElementById("demo").dispatchEvent(x);
+    //     }
+    // </scrip>
+    // <h1>Usando el Metodo createEvent()</h1>
+    // <p>El metodo permite simular un evento</p>
+    // <div onmouseover="this.innerHTML+='*';" id="demo">*</div>
+    // <br>
+    // <button onclick="mifuncion(event)">Click</button>
+
+//8
+    // <script>
+    //     var v=document.defaultView;
+    //     var w=v.innerWidth;
+    //     var h=v.innerHeight;
+    //     var tipo=document.doctype.name;
+    //     document.write(w+"<br>");
+    //     document.write(h+"<br>");
+    //     document.write(tipo+"<br>");
+
+    // </scrip>
+//9
+    // <form action="">
+    //     Cliente<input type="text" name="a" id="x1" value="Luis`"><br>
+    //     Losa<input type="text" name="b" id="x2" value="Jaime"><br>
+    //     Tora<input type="text" name="c" id="x3" value="dor"><br>
+
+    // </form>
+    // <form action="">
+    //         Nombre<input type="text" name="x" id="x4" value="testo"><br>
+    //         Dir<input type="text" name="y" id="x5" value="asdd"><br>
+    //         Tel<input type="text" name="z" id="x6" value="eeeee"><br>
+    
+    //     </form>
+    // <p id="demo"></p>
+    // <script>
+    // var x =document.forms.item(0)[2].value;
+    // document.getElementById("demo").innerHTML=x;
+
+    // var y =document.forms.namedItem(0).value;
+    // Mal document.getElementById("demo").innerHTML=y;
+    // </scrip>
+//10
+    // <p class="demo">Lorem ipsum dolor sit amet.</p>
+    // <p class="demo">Lorem ipsum dolor sit amet.</p>
+    // <p class="demo">Lorem ipsum dolor sit amet.</p>
+    // <script>
+    //     var x=document.getElementsByClassName("demo");
+    //     var i;
+    //     for(i=0;i<x.length;i++){
+    //         x[i].style.backgroundColor="red";
+    //     }
+    //     console.log(x);
+    // </scrip>
+//11
+    // Gatos:<input type="checkbox" name="animal" value="Gatos"><br>
+    // Perros:<input type="checkbox" name="animal" value="Perros">
+    // <script>
+    //     var x=document.getElementsByName("animal");
+    //     var i;
+    //     for(i=0;x.length;i++){
+    //         console.log(x[i].innerText);
+             
+    //     }
+
+    // </scrip>
+
+</script>
+</html>

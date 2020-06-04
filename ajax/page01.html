@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Ajax</title>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <div id="demo">
+        <h2>Texto a ser modificado por AJAX</h2>
+        <button type="button" id="boton">Cambiar Contenido</button>
+    </div>
+    <script>
+        function loadDoc() {
+            let method="GET";//Editable GET/POST
+            //let url='ajax_info.txt';//Editable ARCH.TXT/ARCH.JSON...
+            let url='https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PD04643PD/json';//Editable ARCH.TXT/ARCH.JSON...
+            
+            //INICIO AREA NO EDITABLE
+            const objAjax=new XMLHttpRequest();
+            objAjax.onreadystatechange = function(){
+                if((this.readyState == 4) && (this.status == 200)){
+                   updateDoc();
+                   //console.log('ok');
+                }
+            }
+            objAjax.open(method, url, true);
+            objAjax.send();
+            //FIN AREA NO EDITABLE
+            function updateDoc() {
+                var myObj = JSON.parse(objAjax.responseText);
+                document.getElementById("demo").innerHTML = myObj;
+                //document.getElementById("demo").innerHTML = objAjax.responseText;
+                //console.log('jaime');
+                
+            }
+        }
+        document.getElementById("boton").addEventListener("click",()=>{
+            loadDoc();
+        })
+
+
+
+// Crea una nueva conexión.
+const socket = new WebSocket('ws://localhost:8080');
+// Abre la conexión
+socket.addEventListener('open', function (event) {
+    socket.send('Hello Server!');
+});
+// Escucha por mensajes
+socket.addEventListener('message', function (event) {
+    console.log('Message from server', event.data);
+});
+    </script>
+</body>
+</html>

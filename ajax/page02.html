@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Ajax</title>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <div id="demo">
+        <h2>Texto a ser modificado por AJAX</h2>
+        <button type="button" id="boton" onclick="obtenerDatos()">Cambiar Contenido</button>
+    </div>
+    <script>
+        function obtenerDatos() {
+            let method="GET";//Editable GET/POST
+            //let url='ajax_info.txt';//Editable ARCH.TXT/ARCH.JSON...
+            //let url='https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PD04643PD/json';//Editable ARCH.TXT/ARCH.JSON...
+            //let url='https://mindicador.cl/api/dolar';//Editable ARCH.TXT/ARCH.JSON...
+            let url='http://www.navarra.es/appsext/DescargarFichero/default.aspx?codigoAcceso=OpenData&fichero=Bibliotecas/bibliotecas.json';//Editable ARCH.TXT/ARCH.JSON...
+            
+            //INICIO AREA NO EDITABLE
+            const api=new XMLHttpRequest();
+            api.open(method, url, true);
+            api.send();
+            api.onreadystatechange = function(){
+                if((this.readyState == 4) && (this.status == 200)){
+                   //updateDoc();
+                   //console.log('ok');
+                   console.log(this.responseText);
+                   
+                }
+            }
+        }
+        // document.getElementById("boton").addEventListener("click",()=>{
+        //     console.log('Desde addEventListener');
+            
+        //     obtenerDatos();
+        // })
+    </script>
+</body>
+</html>

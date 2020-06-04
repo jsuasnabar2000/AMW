@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images.jpg" alt="">
+                <p>Imagen Uno</p>
+            </div>
+            <div class="col-md-8" id="col2">
+                <h1 id="titulo1">Titulo General</h1>
+                <p name="parrafo1">Lorem1 ipsum dolor sit, amet </p>
+                <p name="parrafo1">Lorem2 ipsum dolor sit, amet </p>
+                <p name="parrafo1">Lorem3 ipsum dolor sit, amet </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images.jpg" class="card-img-top" alt="...">
+                    <div class="card-body" id="btn">
+                        <h5 class="card-title">Tema Primero</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tema segundo</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Teme tercero</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        
+    </div>
+    <script>
+
+        document.getElementById("titulo1").innerHTML="Titulo Geneeral cambiado";
+        for(let i=0;i<document.getElementsByName("parrafo1").length;i++){
+            document.getElementsByName("parrafo1")[i].innerHTML=`Parrafito cambiado ${i}`;
+        }
+        for(let i=0;i<document.getElementsByClassName("card-title").length;i++){
+            document.getElementsByClassName("card-title")[i].innerHTML="Titulo Card";
+        }
+        let parr=document.createElement("p");
+        let cont=document.createTextNode("Otro parrafo");
+        parr.appendChild(cont);
+        document.getElementById("col2").appendChild(parr);
+        //document.querySelector(".col-md-8").a
+        
+        
+        for(let i=0;i<document.getElementsByClassName("card-text").length;i++){
+            let parr1=document.createElement("p");
+            let cont1=document.createTextNode("Otro parrafo");
+            parr1.appendChild(cont1);
+            document.getElementsByClassName("card-text")[i].appendChild(parr1);
+        }
+        
+        document.getElementById("btn")[2].removeChild("a");
+
+    //     var a=["Jaime", "Antonio", "Pedro"];
+    // localStorage.setItem("nombre", a);
+    // var x=localStorage.getItem("nombre");
+    // console.log(x);
+    // //document.getElementById("app").innerHTML=x;
+    // y=document.getElementById("app").appendChild("p");
+    // y.innerHTML=x;
+
+
+    //console.log(;
+     
+    </script>
+</body>
+</html>
